@@ -8,6 +8,7 @@
 
 body {
     background-color: #FAECB6;
+    z-index: -10;
 }
 
 .other {
@@ -25,13 +26,15 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    /* position: relative; */
 }
 
 .event-section h1 {
     /* font-size: 100px; */
-    font-size: 5.25rem;
+    font-size: 4rem;
     font-family: "Ruslan Display", sans-serif;
     font-weight: 400;
+    z-index: 2;
 }
 
 .event-section .events {
@@ -41,6 +44,7 @@ body {
     font-weight: 600;
     display: flex;
     
+    z-index: 2;
     flex-wrap: wrap;
 }
 
@@ -50,19 +54,25 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 3px;
     border: 1px solid black;
     box-shadow: 4px 4px 0px 0px #000000;
-    width: 269px;
+    max-width: fit-content;
     height: 48px;
+    z-index: 2;
 }
 
-.event-section button {
-    width: 269px;
+.event-section button span{
+    max-width: fit-content;
     height: 48px;
     gap: 0px;
-    opacity: 0px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.65rem;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 600;
 }
 
 .event-section button svg {
@@ -72,4 +82,72 @@ body {
     gap: 0px;
     opacity: 0px;
 
+}
+
+.event-section img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    opacity: 1;
+    bottom: -242px;
+    left: 0;
+    object-fit: cover;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .event-section {
+        padding: 30px;
+    }
+
+    .event-section h1 {
+        font-size: 3rem;
+    }
+
+    .event-section .events {
+        font-size: 1.5rem;
+    }
+
+    .event-section button {
+        padding: 8px 16px;
+        height: 40px;
+    }
+
+    .event-section button span {
+        font-size: 1.25rem;
+    }
+
+    .event-section button svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-section {
+        padding: 20px;
+    }
+
+    .event-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .event-section .events {
+        font-size: 1.25rem;
+    }
+
+    .event-section button {
+        padding: 6px 12px;
+        height: 36px;
+    }
+
+    .event-section button span {
+        font-size: 1rem;
+    }
+
+    .event-section button svg {
+        width: 24px;
+        height: 24px;
+    }
 }
