@@ -26,7 +26,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* position: relative; */
+    position: relative;
 }
 
 .event-section h1 {
@@ -90,7 +90,7 @@ body {
     width: 100%;
     z-index: 1;
     opacity: 1;
-    bottom: -242px;
+    bottom: 0px;
     left: 0;
     object-fit: cover;
 }
